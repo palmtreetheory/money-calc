@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+	<!--<link rel="stylesheet" href="css/lcMock.css">-->
+	<link rel="stylesheet" href="css/money.css">
+	<link rel="stylesheet" href="css/side-nav.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+
+				<a href="#" data-activates="mobile-demo" id="mobDem" class="button-collapse"><i class="material-icons">menu</i></a>
+				<a href="#" class="brand-logo center"><span>Money Calculator</span> </a>
+				<a href="index.html" class="button-collapse2"><i class="material-icons">home</i></a>
+
+				<ul class="side-nav mobileNav" id="mobile-demo">
+					<div class="row">
+						<div class="top-prof">
+							<div class="prof-back">
+								<span class="welMsg"><span>Danny</span></span>
+								<img class="menu-back" src="img/mountain.png">
+							</div>
+							<div class="prof-img">
+								<a href="profile.html">
+									<img src="img/boy-circle-2.png">
+								</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col s12">
+							<div class="col s6">
+								<li><a href="cal-view.html"><i class="large material-icons">insert_invitation</i>Calendar</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="med-view.html"><i class="material-icons fa-3x">local_hospital</i>Medication</a></li>
+							</div>
+							<div class="col s6">
+								<li><a href="money-view.html"><i class="material-icons">monetization_on</i>Money</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="nav-view.html"><i class="material-icons">directions</i>Navigation</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="weather-view.html"><i class="material-icons">wb_sunny</i>Weather</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="wiki-view.html"><i class="fa fa-wikipedia-w"></i>
+ Wiki Info</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="account-info.html"><i class="material-icons">settings</i>Settings</a>
+								</li>
+							</div>
+							<div class="col s6">
+								<li><a href="cal-view.html"><i class="material-icons">videogame_asset</i>Games<i class="material-icons" style="	font-size: 13px !important;
+    position: relative;
+    right: -33px;
+    top: -104px;
+        color: #ADADAD;
+    text-shadow: none;
+}">open_in_new</i></a>
+								</li>
+							</div>
+						</div>
+
+				</ul>
+
+				</div>
+		</nav>
+		</div>
+		<div class="row homeRow">
+
+			<form method="post">
+				<div class="col s8 billAmnt">
+					<ul class="collection">
+						<li class="collection-item avatar">
+							<span class="title">Bill Amount</span>
+							<div class="input-field">
+								<i class="material-icons prefix">attach_money</i>
+								<input class="text_box" type="number" id="number" name="num" placeholder="Enter bill amount" pattern="[0-9]*">
+							</div>
+							<span class="title">Your Amount</span>
+							<div class="input-field">
+								<i class="material-icons prefix">attach_money</i>
+								<input type="text" id="total" name="yoAm">
+							</div>
+						</li>
+				</div>
+				<div class="col s4 billAmnt">
+					<ul class="collection">
+						<li class="collection-item avatar" style="padding-bottom: 15px">
+							<span class="title">Split</span>
+							<div id="myForm">
+								<input type='button' value='+' class='qtyplus' field='quantity'>
+								<input type='text' name='quantity' class='qty' value="1" id="spltAmnt">
+								<input type='button' value='-' class='qtyminus' field='quantity'>
+							</div>
+						</li>
+				</div>
+				<div class="col s12 tipAmnt">
+					<ul class="collection">
+
+						<li class="collection-item avatar">
+							<div class="row">
+								<span class="title">Tip (%)</span>
+							</div>
+							<div class="valign-wrapper">
+								<a class="btn-flat circleTip valign" id="10per">10%</a>
+								<a class="btn-flat circleTip valign" id="15per">15%</a>
+								<a class="btn-flat circleTip valign" id="18per">18%</a>
+								<a class="btn-flat circleTip valign" id="20per">20%</a>
+
+							</div>
+						</li>
+				</div>
+
+				<div class="col s6 totalAmnt">
+					<ul class="collection">
+						<li class="collection-item avatar">
+							<span class="title">Tip</span>
+							<div class="input-field">
+								<i class="material-icons prefix">attach_money</i>
+								<input type="text" id="tipTots" value="0">
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col s6 totalAmnt">
+					<ul class="collection">
+						<li class="collection-item avatar">
+							<span class="title">Total</span>
+							<div class="input-field">
+								<i class="material-icons prefix">attach_money</i>
+								<input value="0" type="text" id="finalTotal">
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</form>
+		</div>
+
+
+
+
+		<!-- Modal Trigger -->
+		<div class="row">
+
+
+			<!--<button href="#modal1" class="btn-add-bttm modal-trigger btn waves-effect waves-light" type="submit" name="action">Edit My Wallet
+			</button>-->
+
+			<a class="btn-floating btn-large waves-effect waves-light btn-add-bttm"><i class="material-icons">edit</i></a>
+
+			<div class="col s6">
+				<span class="title">My Wallet:</span>
+				<div class="input-field">
+					<i class="material-icons prefix">attach_money</i>
+					<input id="bRoll">
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal bottom-sheet iHave">
+			<div class="modal-content">
+				<h4>I Have</h4>
+
+				<div class="col s12">
+					<p>Select the bills you have </p>
+				</div>
+
+				<p><span>My Bank:
+						$<input id="bankRoll"></span>
+				</p>
+
+
+				<div class="row">
+					<div class="col s3">
+						<div class="one-bill">
+							<div class="money-cir">
+								<!--<i class="material-icons">attach_money</i>-->$1
+							</div>
+						</div>
+					</div>
+					<div class="col s3">
+						<div class="one-bill">
+							<div class="money-cir">
+								<!--<i class="material-icons">attach_money</i>-->$5
+							</div>
+						</div>
+					</div>
+					<div class="col s3">
+						<div class="one-bill">
+							<div class="money-cir-dbl">
+								<!--<i class="material-icons">attach_money</i>-->$10
+							</div>
+						</div>
+					</div>
+					<div class="col s3">
+						<div class="one-bill">
+							<div class="money-cir-dbl">
+								<!--<i class="material-icons">attach_money</i>-->$20
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s3">
+						<div id="myForm">
+							<input type='button' value='+' class='monPlus' field='quantity'>
+							<input type='text' name='quantity' class='qty' value="0" id="oneAmnt">
+							<input type='button' value='-' class='monMinus' field='quantity'>
+						</div>
+					</div>
+					<div class="col s3">
+						<div id="myForm">
+							<input type='button' value='+' class='monPlus' field='quantity'>
+							<input type='text' name='quantity' class='qty' value="0" id="fiveAmnt">
+							<input type='button' value='-' class='monMinus' field='quantity'>
+						</div>
+					</div>
+					<div class="col s3">
+						<div id="myForm">
+							<input type='button' value='+' class='monPlus' field='quantity'>
+							<input type='text' name='quantity' class='qty' value="0" id="tenAmnt">
+							<input type='button' value='-' class='monMinus' field='quantity'>
+						</div>
+					</div>
+					<div class="col s3">
+						<div id="myForm">
+							<input type='button' value='+' class='monPlus' field='quantity'>
+							<input type='text' name='quantity' class='qty' value="0" id="20Amnt">
+							<input type='button' value='-' class='monMinus' field='quantity'>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+			</div>
+		</div>
+
+
+
+
+
+
+</body>
+<script src="js/money.js"></script>
+
+
+
+</html>
