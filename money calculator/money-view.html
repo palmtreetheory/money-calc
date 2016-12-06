@@ -2,218 +2,89 @@
 <html>
 
 <head>
-	<!--Import Google Icon Font-->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-
-	<!--<link rel="stylesheet" href="css/lcMock.css">-->
-	<link rel="stylesheet" href="css/money.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!--<link rel="stylesheet" href="css/lcMock.css">-->
+    <link rel="stylesheet" href="css/money.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
 
 <body>
-    
-        <div class="container blue-grey lighten-5">
-	       <div class="navbar-fixed">
-		<nav>
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo center"><span>Money Calculator</span>
-
-				<ul class="side-nav mobileNav" id="mobile-demo">
-					
-					<div class="row">
-						<div class="col s12">
-							<div class="col s6">
-								<li>
-                                    <a href="cal-view.html"><i class="large material-icons">insert_invitation</i>Calendar</a>
-								</li>
-							</div>
-							</div>
-							
-						</div>
-
-				</ul>
-
-				</div>
-		</nav>
-		</div>
-		<div class="row homeRow">
-
-			<form method="post">
-				<div class="col s8 billAmnt">
-					<ul class="collection">
-						<li class="collection-item avatar">
-							<span class="title">Bill Amount</span>
-							<div class="input-field">
-								<i class="material-icons prefix">attach_money</i>
-								<input class="text_box" type="number" id="number" name="num" placeholder="Enter bill amount" pattern="[0-9]*">
-							</div>
-							<span class="title">Your Amount</span>
-							<div class="input-field">
-								<i class="material-icons prefix">attach_money</i>
-								<input type="text" id="total" name="yoAm">
-							</div>
-						</li>
-				</div>
-				<div class="col s4 billAmnt">
-					<ul class="collection">
-						<li class="collection-item avatar" style="padding-bottom: 15px">
-							<span class="title">Split</span>
-							<div id="myForm">
-								<input type='button' value='+' class='qtyplus' field='quantity'>
-								<input type='text' name='quantity' class='qty' value="1" id="spltAmnt">
-								<input type='button' value='-' class='qtyminus' field='quantity'>
-							</div>
-						</li>
-				</div>
-				<div class="col s12 tipAmnt">
-					<ul class="collection">
-
-						<li class="collection-item avatar">
-							<div class="row">
-								<span class="title">Tip (%)</span>
-							</div>
-							<div class="valign-wrapper">
-								<a class="btn-flat circleTip valign" id="10per">10%</a>
-								<a class="btn-flat circleTip valign" id="15per">15%</a>
-								<a class="btn-flat circleTip valign" id="18per">18%</a>
-								<a class="btn-flat circleTip valign" id="20per">20%</a>
-
-							</div>
-						</li>
-				</div>
-                <div class="totalAmnt col s12">
-				<div class="col s6 ">
-					<ul class="collection">
-						<li class="collection-item avatar">
-							<span class="title">Tip</span>
-							<div class="input-field">
-								<i class="material-icons prefix">attach_money</i>
-								<input type="text" id="tipTots" value="0">
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="col s6">
-					<ul class="collection">
-						<li class="collection-item avatar">
-							<span class="title">Total</span>
-							<div class="input-field">
-								<i class="material-icons prefix">attach_money</i>
-								<input value="0" type="text" id="finalTotal">
-							</div>
-						</li>
-					</ul>
-				</div>
-                </div>       
-			</form>
-		</div>
-        </div>            
-
-
-
-
-		<!-- Modal Structure -->
-		<div id="modal1" class="modal bottom-sheet iHave">
-			<div class="modal-content">
-				<h4>I Have</h4>
-
-				<div class="col s12">
-					<p>Select the bills you have </p>
-				</div>
-
-				<p><span>My Bank:
-						$<input id="bankRoll"></span>
-				</p>
-
-
-				<div class="row">
-					<div class="col s3">
-						<div class="one-bill">
-							<div class="money-cir">
-								<!--<i class="material-icons">attach_money</i>-->$1
-							</div>
-						</div>
-					</div>
-					<div class="col s3">
-						<div class="one-bill">
-							<div class="money-cir">
-								<!--<i class="material-icons">attach_money</i>-->$5
-							</div>
-						</div>
-					</div>
-					<div class="col s3">
-						<div class="one-bill">
-							<div class="money-cir-dbl">
-								<!--<i class="material-icons">attach_money</i>-->$10
-							</div>
-						</div>
-					</div>
-					<div class="col s3">
-						<div class="one-bill">
-							<div class="money-cir-dbl">
-								<!--<i class="material-icons">attach_money</i>-->$20
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s3">
-						<div id="myForm">
-							<input type='button' value='+' class='monPlus' field='quantity'>
-							<input type='text' name='quantity' class='qty' value="0" id="oneAmnt">
-							<input type='button' value='-' class='monMinus' field='quantity'>
-						</div>
-					</div>
-					<div class="col s3">
-						<div id="myForm">
-							<input type='button' value='+' class='monPlus' field='quantity'>
-							<input type='text' name='quantity' class='qty' value="0" id="fiveAmnt">
-							<input type='button' value='-' class='monMinus' field='quantity'>
-						</div>
-					</div>
-					<div class="col s3">
-						<div id="myForm">
-							<input type='button' value='+' class='monPlus' field='quantity'>
-							<input type='text' name='quantity' class='qty' value="0" id="tenAmnt">
-							<input type='button' value='-' class='monMinus' field='quantity'>
-						</div>
-					</div>
-					<div class="col s3">
-						<div id="myForm">
-							<input type='button' value='+' class='monPlus' field='quantity'>
-							<input type='text' name='quantity' class='qty' value="0" id="20Amnt">
-							<input type='button' value='-' class='monMinus' field='quantity'>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
-			</div>
-		</div>
-
-
-
-
-
-
+    <div class="container blue-grey lighten-5">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper"> <a href="#" class="brand-logo center"><span>Money Calculator</span>
+                </div>
+            </nav>
+        </div>
+    <div class="row homeRow">
+        <form method="post">
+            <div class="col s7 billAmnt">
+                <ul class="collection">
+                    <li class="collection-item avatar"> <span class="title">Bill Amount</span>
+                        <div class="input-field"> <i class="material-icons prefix">attach_money</i>
+                            <input class="text_box" type="number" id="number" name="num" placeholder="0.00" pattern="[0-9]*"> </div> 
+                        <div id="share-amount">
+                        <span class="title">Your Amount</span>
+                        <div class="input-field"> <i class="material-icons prefix">attach_money</i>
+                            <input type="text" id="total" name="yoAm"> </div>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s5 billAmnt">
+                <ul class="collection">
+                    <li class="collection-item avatar" style="padding-bottom: 25px"> <span class="title">Split?</span>
+                        <div class="switch">
+                    <label> No
+    <input type="checkbox" id="splitYN"> <span class="lever"></span> Yes </label>
+</div>
+                        <div id="myForm">
+                            <input type='button' value='+' class='qtyplus' field='quantity'>
+                            <input type='text' name='quantity' class='qty' value="1" id="spltAmnt">
+                            <input type='button' value='-' class='qtyminus' field='quantity'> </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s12 tipAmnt">
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <div class="row"> <span class="title">Tip (%)</span> </div>
+                        <div class="valign-wrapper"> <a class="btn-flat circleTip valign" id="10per">10%</a> <a class="btn-flat circleTip valign" id="15per">15%</a> <a class="btn-flat circleTip valign" id="18per">18%</a> <a class="btn-flat circleTip valign" id="20per">20%</a> </div>
+                </li>
+                </ul>
+        </div>
+        <div class="totalAmnt col s12">
+            <div class="col s6 ">
+                <ul class="collection">
+                    <li class="collection-item avatar"> <span class="title">Tip</span>
+                        <div class="input-field"> <i class="material-icons prefix">attach_money</i>
+                            <input type="text" id="tipTots" value="0"> </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s6">
+                <ul class="collection">
+                    <li class="collection-item avatar"> <span class="title">Total</span>
+                        <div class="input-field"> <i class="material-icons prefix">attach_money</i>
+                            <input value="0" type="text" id="finalTotal"> </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
 </body>
 <script src="js/money.js"></script>
-
-
 
 </html>
